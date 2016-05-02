@@ -149,7 +149,7 @@ NSLocalizedStringFromTable(key, @"PSUdateApp", nil)
         if ( dictionary[@"results"][0][@"type"] )
             [self setStrategy: [dictionary[@"results"][0][@"type"] isEqualToString:@"mandatory"] ? ForceStrategy : DefaultStrategy];
         
-        return [kCurrentAppVersion compare:_newVersion options:NSNumericSearch] == NSOrderedAscending;
+        return [kCurrentAppVersion compare:_newVersion options:NSNumericSearch] != NSOrderedSame;
     }
     
     return NO;
